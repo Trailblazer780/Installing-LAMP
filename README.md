@@ -6,7 +6,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 3. [Deploying a Website Using Apache](#Deploying-a-Website-Using-Apache)
 4. [Diabling Directory Browsing](#Disabling-Directory-Browsing)
 5. [Installing PHP for Apache](#Installing-PHP-for-Apache)
-6. [Setting Up SSL](#Setting-Up-SSL)
+6. [Generating a Self Signed SSL Certificate](#SGenerating-a-Self-Signed-SSL-Certificate)
 
 
 ## Downloading Apache
@@ -133,7 +133,7 @@ After this file has been created inside the website directory you can now verify
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2027%20php%20working.PNG)
 
-## Setting Up SSL
+## Generating a Self Signed SSL Certificate
 
 First, we are going to start off with setting up SSL on testingsite1.tbd. To do this we must generate and SSL certificate and key file to allow us to use SSL. The first step we need to do is to move the openssl.cnf file from `C:/Apache24/conf` to the `C:/Apache24/bin` folder. 
 
@@ -141,6 +141,37 @@ First, we are going to start off with setting up SSL on testingsite1.tbd. To do 
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2029%20Moved%20SSL.PNG)
 
+The next step in this process is generating the SSL self signed certificate. To do this we must open a command prompt and switch to the `C:/Apache/bin` directory.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2030%20SSL%20opening%20CMD.PNG)
+
+Next, we need to run a command that will build some files that are going to be needed when generating the SSL certificate. The below screenshot will include the command that needs to be run. The pass phrase can be anything, and all the other information can be whatever you choose. It is important to set the common name to the website URL. After running this command, you will see that 2 files have been generated in your bin folder. One being a .csr file and the other being a .pem file. The command is: `openssl req -config openssl.cnf -new -out testingsite1.csr -keyout testingsite1.pem`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2031%20Generating%20SSL%20files.PNG)
+
+These are the two files generated.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2032%20SSL%20files%20generated.PNG)
+
+After those two files have been generated, we now need to generate our key file. The below screenshot will have the command that needs to be run to do this. When it asks for the passphrase you enter in the password you set it as in the previous step. Note: This is a self signed certificate it is not a real certificate. The command is: `rsa -in testingsite1.pem -out testingsite1.key`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2033%20Generating%20key%20file.PNG)
+
+You will now see that the .key file has been generated in the bin folder.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2034%20key%20file%20generated.PNG)
+
+The next step is going to be generating the signed certificate file. The command is: `openssl x509 -in testingsite1.csr -out testingsite1.crt -req -signkey testingsite1.key -days 3650`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2035%20certificate%20generation.PNG)
+
+After running this command, you will now see that a new file has been generated in the `C:/Apache24/bin` folder.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2036%20Security%20Certificate.PNG)
+
+Next, we are going to move back the original openssl.cnf file to the /Apache24/conf directory and the 4 files that were generated doing the previous steps.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2037%20Move%20back%20files.PNG)
 
 
 
