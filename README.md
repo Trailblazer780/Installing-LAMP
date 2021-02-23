@@ -68,4 +68,25 @@ Moving onto the next step is creating a directory for you to place the files tha
 
 In this example we will use these two folders inside of the htdocs. After creating these folders, we now need to access the hosts file in the windows operating system so that we can access these websites when they are deployed on Apache. To do this we need to navigate to the hosts file which is located here: `C:\Windows\System32\drivers\etc.`Inside of this folder the hosts file exists.
 
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2014%20windows%20hosts%20file.PNG)
+
+The next step in the process is to open the hosts file with any text editor while in administrative mode. You will only be able to save your changes if your text editor has administrative permissions. The screenshot below contains what the hosts file will direct you to when entering in those URL’s in a browser. This now allows apache to access them as well.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2015%20Modifying%20hosts%20.PNG)
+
+After the hosts file has been modified, we now need to put something in the two folders that were created in earlier steps. The default file that Apache will look for as the landing page for a website being hosted is index.html. So, you can simply drop a basic html file with the name of index into the folders. The html file can contain anything from a line of text to a full-blown webpage. For this example, our index.html will only contain one line of text.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2016%20basic%20html%20page.PNG)
+
+For the next step we are going to making the websites live with whatever content that is inside of the folders. To do this we will be modifying the httpd-vhosts.conf file that was discussed earlier. This file can be accessed inside of the `C:/Apache24/conf/extra file`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2017%20modifying%20vhosts.PNG)
+
+When you first open the httpd-vhosts.conf file you will see two examples of how the configuration is set up to host a website. First, we will make both test websites accessible and being hosted by Apache locally. To do this we can copy the example and change the values in it to reflect our websites. The screen shot below will provide the basic configuration to get the website up.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2018%20vhosts%20basic%20config.PNG)
+
+After you have made the modifications in the httpd-vhosts.conf file to reflect the website and files you would like to host, save the changes you have made to the configuration file. When this has been completed you must now restart the Apache server for the changes to take effect. You can do this by stopping and then starting the Apache2.4 in the services menu on your machine. Now to check to see if these changes have been made and the website is now live you need to go into your browser and type in the URL to the website that you named in the vhosts configuration file. If done correctly you will now see that the website is live. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2019%20Website%20live.PNG)
 
