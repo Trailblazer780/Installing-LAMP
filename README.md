@@ -99,4 +99,4 @@ Now wil disable directory borwsing on the websites that we just set-up. To do th
         Options -Indexes +FollowSymLinks
         AllowOverride None
         Require all granted
-    </Directory>
+    </Directory>`
