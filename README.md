@@ -9,6 +9,8 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 6. [Generating a Self Signed SSL Certificate](#SGenerating-a-Self-Signed-SSL-Certificate)
 7. [Enabling SSL on Apache](#Enabling-SSL-on-Apache)
 8. [HTTP to HTTPS Redirect](#HTTP-to-HTTPS-Redirect)
+9. [Installing MariaDB](#Installing-MariaDB)
+10. [Completion](#Completion)
 
 
 ## Downloading Apache
@@ -203,9 +205,43 @@ Now that we have SSL working, we can now force all of the traffic that comes int
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2043%20Redirecting%20to%20https.PNG)
 
-After those changes have been made you must save them and then restart your Apache server. To check and see if your redirect is working all you simply need to do is try and access your site using http:// and it will automatically redirect to the https:// version of your website. If you can still access the http:// version of your website that means your redirect is not working. 
+After those changes have been made you must save them and then restart your Apache server. To check and see if your redirect is working all you simply need to do is try and access your site using http:// and it will automatically redirect to the https:// version of your website.
 
+## Installing MariaDB
 
+MariaDB is the database server software that we are going to install. First, we must get the latest version for windows from https://mariadb.org/. Click the download button on the landing page of that website. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2044%20Installing%20Maria%20DB%20download.PNG)
+
+Clicking this download button will bring you to the download page where you can select what kind of machine you are on (windows) and what version of MariaDB you would like to download. Select the newest version of MariaDB. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2045%20Downloading%20MariaDB.PNG)
+
+This will then start the download for MariaDB. Once it is finished you can execute the file that was downloaded.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2046%20Installing%20MariaDB%201.PNG)
+
+Click the next button and accept the terms of use policy and then click next. You will then come up to this screen. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2047%20Installing%20MariaDB%202.PNG)
+
+Select the location that you would like MariaDB to be installed in.
+
+The next screen will prompt you for a root user password to access the database with. Enter in the information and then click next.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2048%20Installing%20MariaDB%203.PNG)
+
+Then you must install MariaDB as a service and give it a TCP port that it can be accessed through. The default port is 3306. Once you have done this click next.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2049%20Installing%20MariaDB%204.PNG)
+
+The next screen you just need to click the install button and accept the UAC that pops up so that it can install. After that you are finished and have successfully installed MariaDB.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2050%20MariaDB%20Installed.PNG)
+
+## Completion
+
+After following this guide you now have everything set up to run an Apache web server and you now know how to make a self signed certificate to use SSL on your website after enabling SSL.
 
 
 
