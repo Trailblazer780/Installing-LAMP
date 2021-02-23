@@ -5,6 +5,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 2. [Installing Apache](#Installing-Apache)
 3. [Deploying a Website Using Apache](#Deploying-a-Website-Using-Apache)
 4. [Diabling Directory Browsing](#Disabling-Directory-Browsing)
+5. [Installing PHP for Apache](#Installing-PHP-for-Apache)
 
 
 ## Downloading Apache
@@ -104,5 +105,34 @@ Require all granted
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2020%20Disable%20directory%20browsing.PNG)
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2021%20Disable%20directory%20browsing%20code.PNG)
+
+## Installing PHP for Apache
+
+The next step of deploying a nice web server is to install PHP to it. To do this we must first start off with the download here: https://windows.php.net/download#php-8.0. There are two different versions of PHP and they are named Thread Safe and Non-Thread Safe version. Apache uses the Thread Safe version so this is the version we need to download. Download the zip file of newest version of Thread Safe PHP (currently it is PHP 8.0.2).
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2022%20Apache.PNG)
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2023%20Thread%20safe%20download.PNG)
+
+The next step after downloading the newest PHP is to extract it. We are going to want to extract it into the C: drive once again just like we did with Apache24. Create a folder named phpApache to extract it to in the C: drive. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2024%20Extracting%20PHP.PNG)
+
+Once you have extracted the contents of the PHP zip file into the new directory we created in the C: drive we can now go forward and give Apache access to the version of PHP we have downloaded by modifying the httpd.conf file. We can find this configuration file in the `C:/Apache23/conf directory`. To do this we must load the PHP module and add the mime type for php extensions. Then finally we need to list where the php.ini file is located. The screenshot below will provide the code that needs to be added to the httpd.conf file to implement php to the web server. This is a one-time configuration change unless you are adding newer or older versions of php to your web server.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2025%20httpd%20php%20.PNG)
+
+This code can be added anywhere in your httpd.conf file. Once this has been added you must save the changes you have made to the httpd.conf file and stop and start the Apache2.4 service for the change to take effect.
+
+To check and see if you have correctly implemented php to your web server you must create a text document inside the website directory and name it phpinfo.php. Then put the following code into that document with your preferred text edition and save the changes made to the file. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2026%20php%20verify.PNG)
+
+After this file has been created inside the website directory you can now verify that php is now running on your server. To do this you must access the php file you have just created inside that directory. If done correctly the webpage should come back looking like the screen shot below. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2027%20php%20working.PNG)
+
+
+
 
 
