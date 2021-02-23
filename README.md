@@ -15,7 +15,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 
 ## Downloading Apache
 
-Before installing Apache please make sure that you have all of the VCDIST's installed. You can quickly get all of them from this link, or you can get the mdirectly from Microsoft. https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
+Before installing Apache please make sure that you have all of the VCDIST's installed. You can quickly get all of them from this link, or you can get them directly from Microsoft. https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
 
 The first step to take is to visit this website: https://httpd.apache.org/download.cgi and get the latest stable version of Apache web server. You then must click on the link that says Apache httpd for Microsoft Windows is available from a few third-party vendors. A screen shot is provided below as to where to click for this download.
 
