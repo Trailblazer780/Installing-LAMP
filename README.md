@@ -1,4 +1,4 @@
-# Installing WAMP on Windows 10
+# Installing WAMP Server
 This is a documentation of how to install WAMP Server. This documentation was made by Ethan Farrell.
 # Table of Contents:
 1. [Downloading Apache](#Downloading-Apache)
