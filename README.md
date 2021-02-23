@@ -34,3 +34,16 @@ The next step is to install Apache as a service and to do this we have to run a 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%206%20Installing%20Apache%20as%20service.PNG)
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%207%20Allow%20access%20through%20firewall.PNG)
+
+After that step you can now go into your services and see that Apache2_4 is now a service on the computer.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%208%20Apache%20in%20services.PNG)
+
+You can now click the “Start the service” button and it will successfully start the Apache web server if there are no port conflicts on your machine.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%209%20Start%20Apache%20Service.PNG)
+
+Now that you have the service running you can do a quick check to see if the server is running correctly. To do this all you need to do is go to your default web browser and type either: localhost or 127.0.0.1 and a page should come up that simply says  “It works.”
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2010%20It%20Works.PNG)
+
