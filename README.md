@@ -125,7 +125,7 @@ The next step after downloading the newest PHP is to extract it. We are going to
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2024%20Extracting%20PHP.PNG)
 
-Once you have extracted the contents of the PHP zip file into the new directory we created in the C: drive we can now go forward and give Apache access to the version of PHP we have downloaded by modifying the httpd.conf file. We can find this configuration file in the `C:/Apache23/conf directory`. To do this we must load the PHP module and add the mime type for php extensions. Then finally we need to list where the php.ini file is located. The screenshot below will provide the code that needs to be added to the httpd.conf file to implement php to the web server. This is a one-time configuration change unless you are adding newer or older versions of php to your web server.
+Once you have extracted the contents of the PHP zip file into the new directory we created in the C: drive we can now go forward and give Apache access to the version of PHP we have downloaded by modifying the httpd.conf file. We can find this configuration file in the `C:/Apache23/conf` directory. To do this we must load the PHP module and add the mime type for php extensions. Then finally we need to list where the php.ini file is located. The screenshot below will provide the code that needs to be added to the httpd.conf file to implement php to the web server. This is a one-time configuration change unless you are adding newer or older versions of php to your web server.
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2025%20httpd%20php%20.PNG)
 
@@ -175,7 +175,7 @@ After running this command, you will now see that a new file has been generated 
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2036%20Security%20Certificate.PNG)
 
-Next, we are going to move back the original openssl.cnf file to the /Apache24/conf directory and the 4 files that were generated doing the previous steps.
+Next, we are going to move back the original openssl.cnf file to the `C:/Apache24/conf` directory and the 4 files that were generated doing the previous steps.
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2037%20Move%20back%20files.PNG)
 
