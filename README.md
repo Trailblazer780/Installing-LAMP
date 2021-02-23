@@ -1,4 +1,4 @@
-# Installing LAMP on Windows 10
+# Installing WAMP on Windows 10
 This is a documentation of how to install LAMP Server. This documentation was made by Ethan Farrell.
 # Table of Contents:
 1. [Downloading Apache](#Downloading-Apache)
