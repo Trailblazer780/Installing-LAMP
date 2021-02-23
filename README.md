@@ -4,6 +4,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 1. [Downloading Apache](#Downloading-Apache)
 2. [Installing Apache](#Installing-Apache)
 3. [Deploying a Website Using Apache](#Deploying-a-Website-Using-Apache)
+4. [Diabling Directory Browsing](#Disabling-Directory-Browsing)
 
 
 ## Downloading Apache
@@ -90,3 +91,12 @@ After you have made the modifications in the httpd-vhosts.conf file to reflect t
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2019%20Website%20live.PNG)
 
+## Diabling Directory Browsing
+
+Now wil disable directory borwsing on the websites that we just set-up. To do this you need to use the following code which will no longer allow directory browsing. The following code needs to be put inside of the `<VirtualHost *:80>` starting and end tag. The below screen shots will show where it needs to be applied. Note: This only disables directory browsing on the site that you apply it to, any other sites you make will have it enabled unless you put this inside of the tags. The code that you need is below 
+
+`    <Directory "${SRVROOT}/htdocs/testingsite1.tbd">
+        Options -Indexes +FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
