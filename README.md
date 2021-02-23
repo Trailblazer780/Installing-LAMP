@@ -6,6 +6,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 3. [Deploying a Website Using Apache](#Deploying-a-Website-Using-Apache)
 4. [Diabling Directory Browsing](#Disabling-Directory-Browsing)
 5. [Installing PHP for Apache](#Installing-PHP-for-Apache)
+6. [Setting Up SSL](#Setting-Up-SSL)
 
 
 ## Downloading Apache
@@ -132,6 +133,13 @@ After this file has been created inside the website directory you can now verify
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2027%20php%20working.PNG)
 
+## Setting Up SSL
+
+First, we are going to start off with setting up SSL on testingsite1.tbd. To do this we must generate and SSL certificate and key file to allow us to use SSL. The first step we need to do is to move the openssl.cnf file from `C:/Apache24/conf` to the `C:/Apache24/bin` folder. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2028%20SSL%20move.PNG)
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2029%20Moved%20SSL.PNG)
 
 
 
