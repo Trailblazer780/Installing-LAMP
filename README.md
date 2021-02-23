@@ -2,6 +2,7 @@
 This is a documentation of how to install LAMP Server. This documentation was made by Ethan Farrell.
 # Table of Contents:
 1. [Downloading Apache](#Downloading-Apache)
+2. [Installing Apache](#Installing-Apache)
 
 
 ## Downloading Apache
@@ -17,3 +18,5 @@ After clicking that link you can scroll down to the heading that says Downloadin
 For this example, we will be using the Apache Lounge. This link will take you to a new website that you can download apache from. You will be given 2 options for windows download. One of them being for a 64-Bit operating system and the other for a 32-Bit operating system. Select whichever one applies to you.
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%203%20Download%20apache.PNG)
+
+## Installing Apache
