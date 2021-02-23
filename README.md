@@ -3,6 +3,7 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 # Table of Contents:
 1. [Downloading Apache](#Downloading-Apache)
 2. [Installing Apache](#Installing-Apache)
+3. [Deploying a Website Using Apache](#Deploying-a-Website-Using-Apache)
 
 
 ## Downloading Apache
@@ -47,3 +48,6 @@ Now that you have the service running you can do a quick check to see if the ser
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2010%20It%20Works.PNG)
 
+If this page appears for you that means that your Apache server is now up and running and ready to be used!
+
+## Deploying a Website Using Apache
