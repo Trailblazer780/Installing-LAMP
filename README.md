@@ -51,3 +51,21 @@ Now that you have the service running you can do a quick check to see if the ser
 If this page appears for you that means that your Apache server is now up and running and ready to be used!
 
 ## Deploying a Website Using Apache
+
+The first steps in deploying a website using Apache web server starts with changing some configurations on the httpd.conf file which is Apaches config file. This file is in the Apache24/conf folder. When you scroll through the file you will notice that a lot of the content is commented out. The change we need to make is to allow apache to use the httpd-vhosts.conf file. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2011%20Chaning%20config%20VHOSTS.PNG)
+
+The above screen shot is the line of code that we need to uncomment so that it looks like this.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2012%20VHOSTS%20enables.PNG)
+
+Now that we have allowed Apache to access that file, we can now move onto the next step of deploying a website using  Apache web server. Note the location of the httpd-vhosts.conf file because we will be accessing it and changing it in the next few steps.
+
+Moving onto the next step is creating a directory for you to place the files that your website will contain. The default folder that Apache access’ when looking for websites to host is in the Apache/htdocs directory. Here in this directory, we will create two websites. To do this we just need to make two folders that are named appropriately (the websites url).
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2013%20website%20folders.PNG)
+
+In this example we will use these two folders inside of the htdocs. After creating these folders, we now need to access the hosts file in the windows operating system so that we can access these websites when they are deployed on Apache. To do this we need to navigate to the hosts file which is located here: `C:\Windows\System32\drivers\etc.`Inside of this folder the hosts file exists.
+
+
