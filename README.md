@@ -1,4 +1,4 @@
-# Installing LAMP
+# Installing LAMP on Windows 10
 This is a documentation of how to install LAMP Server. This documentation was made by Ethan Farrell.
 # Table of Contents:
 1. [Downloading Apache](#Downloading-Apache)
@@ -7,6 +7,8 @@ This is a documentation of how to install LAMP Server. This documentation was ma
 4. [Diabling Directory Browsing](#Disabling-Directory-Browsing)
 5. [Installing PHP for Apache](#Installing-PHP-for-Apache)
 6. [Generating a Self Signed SSL Certificate](#SGenerating-a-Self-Signed-SSL-Certificate)
+7. [Enabling SSL on Apache](#Enabling-SSL-on-Apache)
+8. [HTTP to HTTPS Redirect](#HTTP-to-HTTPS-Redirect)
 
 
 ## Downloading Apache
@@ -172,6 +174,38 @@ After running this command, you will now see that a new file has been generated 
 Next, we are going to move back the original openssl.cnf file to the /Apache24/conf directory and the 4 files that were generated doing the previous steps.
 
 ![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2037%20Move%20back%20files.PNG)
+
+## Enabling SSL on Apache
+
+We are now going to enable the module for SSL in the httpd.conf file. The quickest way to find this line in the configuration file is going to be using the find function and searching SSL and then locating and uncommenting the below line in the screen shot. After you have done this, save the changes to the configuration file and then restart the Apache server. The line should look like this: `LoadModule ssl_module modules/mod_ssl.so`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2038%20Enabling%20SSL.PNG)
+
+Once Apache has restarted and is up and running again, we now need to make modifications to the httpd-vhosts.conf file so that the website can use our new  SSL certificate that we generated. Now we are going to be using these files. You are going to want to copy and paste the website configuration you already have that is in the httpd-vhosts.conf file and make and adjustment where it is listening on port 80 and change the new version you just pasted to the port 443. The line should look like this: `<VirtualHost *:443>`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2039%20Port%20443%20listen.PNG)
+
+Once that is completed you must add 3 more lines inside of that configuration. One line being where the SSL certificate is (we moved this back to the /Apache24/conf directory for easy locating. The second line being where the SSL certificate key file is which is also in the same location. The third line that needs to be added to the configuration is turning the SSL engine on, which is simply “SSLEngine on”. Your config should look like the screen shot below.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2040%20turn%20on%20ssl.PNG)
+
+One more change that needs to be made to the httpd-vhosts.conf file is that it needs to be listening on port 443. This can simply be done by adding in a line above the website configurations “Listen 443”. It should look like the screen shot below. The line should look like this: `Listen 443`.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2041%20vhosts%20listen%20443.PNG)
+
+After this has all been done, we can now test that the SSL is working correctly. For this test we simply just try and access our site by typing in https://testingsite1.tbd or whatever you named your website. When you access it, you will see a pop up stating that the certificate is a self signed certificate, and you must accept this certificate to proceed to the website. When this is complete you will see that in the URL that it has the certificate and is on the https version of the website. The below screen shot can help you verify if it is working correctly.
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2042%20Checking%20SSl.PNG)
+
+## HTTP to HTTPS Redirect
+
+Now that we have SSL working, we can now force all of the traffic that comes into the website on port 80(http) and redirect it to port 443(https). On your https-vhosts.conf file you have the website that is now configured for both port 80 and port 443. You must edit the website that is listening on port 80 and add in the redirect. This part is very simple. The line you need to add in is `Redirect permanent / https://testingsite1.tbd` after adding this line in your configuration should look like the below screen shot. 
+
+![alt text](https://github.com/Trailblazer780/Installing-LAMP/blob/main/Images/Capture%2043%20Redirecting%20to%20https.PNG)
+
+After those changes have been made you must save them and then restart your Apache server. To check and see if your redirect is working all you simply need to do is try and access your site using http:// and it will automatically redirect to the https:// version of your website. If you can still access the http:// version of your website that means your redirect is not working. 
+
+
 
 
 
