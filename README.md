@@ -94,13 +94,10 @@ After you have made the modifications in the httpd-vhosts.conf file to reflect t
 ## Diabling Directory Browsing
 
 Now wil disable directory borwsing on the websites that we just set-up. To do this you need to use the following code which will no longer allow directory browsing. The following code needs to be put inside of the `<VirtualHost *:80>` starting and end tag. The below screen shots will show where it needs to be applied. Note: This only disables directory browsing on the site that you apply it to, any other sites you make will have it enabled unless you put this inside of the tags. The code that you need is below 
-
-`<Directory "${SRVROOT}/htdocs/testingsite1.tbd">
-
+`
+<Directory "${SRVROOT}/htdocs/testingsite1.tbd">
 Options -Indexes +FollowSymLinks
-
 AllowOverride None
-
 Require all granted
-
-</Directory>`
+</Directory>
+`
